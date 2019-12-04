@@ -15,7 +15,7 @@ class StudentsController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view('student/index', ['students' => $students]);
+        return view('students/index', ['students' => $students]);
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        return view('student/create');
+        return view('students.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class StudentsController extends Controller
      */
     public function show(Student $student)
     {
-        return view('student/show', ['student' => $student]);
+        return view('students/show', ['student' => $student]);
     }
 
     /**

@@ -9,7 +9,7 @@
                 <h1 class="mt-3">
                     From Tambah Data Mahasiswa
                 </h1>
-                <form action="" method="post" action="/students">
+                <form method="post" action="/students">
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama</label>
@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label for="nrp">NRP</label>
                     <input type="text" class="form-control @error('nrp') is-invalid @enderror" id="nrp" placeholder="Masukan nrp" name="nrp" value="{{old('nrp')}}">
-                    @error('nama')
+                    @error('nrp')
                         <div class="invalid-feedback">
                             {{$message}}
                         </div>

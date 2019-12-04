@@ -9,8 +9,13 @@
             <h1>
                 Daftar Students
             </h1>
-            <table class="table table-dark">
-            <a href="" class="btn btn-primary my-3">Tambah Data Student</a>
+  <table class="table table-dark">
+    <a href="/students/create" class="btn btn-primary my-3">Tambah Data Student</a>
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -24,7 +29,7 @@
       <td>{{$student->nama}}</td>
       <td>
 
-	    	<a href="{{url('students/' . $student->id)}}" class="badge badge-primary float-right ml-1">detail</a>
+	    	<a href="{{url('students/' . $student->id)}}" class="badge badge-info float-right ml-1">detail</a>
       </td>
     </tr>
   @endforeach
