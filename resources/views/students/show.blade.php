@@ -16,11 +16,14 @@
     <p class="card-text">{{$student ->nrp}}</p>
     <p class="card-text">{{$student ->jurusan}}</p>
     <a href="{{$student->id}}/edit" class="btn btn-success">Edit</a>
+
     <form action="/students/{{$student->id}}" method="post" class="d-inline">
-    @method('delete')
-    @csrf
-    <button type="submit" class="btn btn-danger">Delete</button>
+        @method('delete')
+        @csrf
+        
+        <button type="submit" class="btn btn-danger"  onclick="return confirm('apa anda yakin ?');">Delete</button>
     </form>
+
     <a href="{{url('students/')}}" class="btn btn-primary">Kembali</a>
   </div>
 </div>
