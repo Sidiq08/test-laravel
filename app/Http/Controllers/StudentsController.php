@@ -66,7 +66,7 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', ['student' => $student]);
     }
 
     /**
@@ -85,12 +85,13 @@ class StudentsController extends Controller
             'jurusan'=>'required'
             ]);
         
-        Student::where('id', $student->id)->update([
+        Student::where('id', $student->id)
+        ->update([
             'nama'=>$request->nama,
             'nrp'=>$request->nrp,
             'email'=>$request->email,
             'jurusan'=>$request->jurusan
-            ]);
+        ]);
 
             
             return redirect('/students')->with('status', 'Data Berhasil Diubah');
